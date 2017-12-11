@@ -3,20 +3,39 @@
     {% include head.html %}
     <body id="page-top" class="index">
     {% include nav.html %}
-    {% include header.html %}
-    {% include portfolio_grid.html %}
-    {% include about.html %}
 
-    {% if site.contact == "static" %}
-    {% include contact_static.html %}
-    {% elsif site.contact == "disqus" %}
-    {% include contact_disqus.html %}
-    {% else %}
-    {% include contact.html %}
-    {% endif %}
+    <div class="container container-interlude">
+        <h1>Energiebericht der Gymnasien in Moers: Strom, Wasser, Heizung</h1>
+        <p>Welche Schule verbraucht wie viel Energie und woran liegt das? Finde es heraus mit dem Energietool von 'Daten machen Schule'</p>
+    </div>
+
+    <div class="main-content" ng-app="App">
+        {{content}}
+    </div>
+
+    <div class="container">
+        <p>
+            Diese Visualisierung zeigt den EnergieVerbrauch.
+            Damit ist eine Darstellung der Wahlergebnisse auf granularer Ebene möglich. Dies ermöglicht
+            im Politik- oder Sozialkunde-Unterricht Fragestellungen wie:
+        </p>
+        <ul>
+            <li>1) Vergleicht den Energieverbrauch der Gymnasien in Moers! (Gruppe 1: Wasser, Gruppe 2: Heizung, Gruppe 3: Strom)</li>
+            <li>2) In welchem Gymnasium werden am meisten/wenigsten Ressourcen verbraucht?</li>
+            <li>3) Welche Gründe kann es für die Unterschiede beim Energieverbrauch geben?</li>
+            <li>4) Sind die Werte der Schulen vergleichbar? Falls nein, ermittelt vergleichbare Werte!</li>
+            <li>5) Welche Maßnahmen können ergriffen werden, um Energie zu sparen? (Internetrecherche)?</li>
+        </ul>
+        <p>
+            Diese Webseite ist Teil des Projekts DatenmachenSchule. Es ist aus der Motivation entstanden,
+            mit offenen Daten digitale Werkzeuge zur Nutzung im Unterricht entstanden.
+            Um mehr über das Projekt und die Idee dahinter zu erfahren, besuche DatenmachenSchule.de.
+            Dort gibt es andere Tools wie OffenerHaushalt und Energieverbrauch, so wie einen Leitfaden,
+            der in das Thema ‘Offene Daten’ einführt und Ideen zu weiteren Anwendungen liefert.
+        </p>
+    </div>
 
     {% include footer.html %}
-    {% include modals.html %}
     {% include js.html %}
     </body>
 </html>

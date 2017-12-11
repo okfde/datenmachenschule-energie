@@ -1,0 +1,27 @@
+---
+layout: default
+---
+{% raw %}
+
+<div class="container" ng-controller="SchoolCtrl">
+	<h3>Schule</h3>
+	<ui-select ng-model="ctrl.school" theme="selectize" ng-disabled="ctrl.disabled" style="width: 300px;" title="Choose a country"
+		on-select="update_school($select.selected)">
+		<ui-select-match placeholder="Wähle eine Schule...">{{$select.selected.name}}</ui-select-match>
+		<ui-select-choices repeat="school in schools | filter: $select.search">
+			<span ng-bind="school.name | highlight: $select.search"></span>
+		</ui-select-choices>
+	</ui-select>
+
+	<chartist class="ct-chart" chartist-data="barData[0]" chartist-chart-type="{{chart.type}}"
+			  chartist-chart-options="chart.options"></chartist>
+	<chartist class="ct-chart" chartist-data="barData[1]" chartist-chart-type="{{chart.type}}"
+			  chartist-chart-options="chart.options"></chartist>
+	<chartist class="ct-chart" chartist-data="barData[2]" chartist-chart-type="{{chart.type}}"
+			  chartist-chart-options="chart.options"></chartist>
+	<h2 ng-bind="test"></h2>
+</div>
+
+{% endraw %}
+
+
